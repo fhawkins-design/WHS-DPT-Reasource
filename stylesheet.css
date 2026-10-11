@@ -1,0 +1,430 @@
+/* ---------------------------------------------------
+   Resource Hub — design tokens
+--------------------------------------------------- */
+:root {
+  --ink:        #20241F;   /* warm charcoal, primary text */
+  --paper:      #F1EFE6;   /* cool notebook paper */
+  --paper-lo:   #E8E3D4;   /* shelf band background */
+  --card:       #FBFAF4;   /* card stock */
+  --maroon:     #7A2632;   /* English department accent */
+  --maroon-dk:  #5C1D26;
+  --gold:       #B98B3E;   /* rule / highlight */
+  --ghost:      #B7B19E;   /* inactive tab text/border */
+
+  --mth: #2E5C8A;
+  --sci: #3E6B4C;
+  --ss:  #A8672E;
+  --art: #6B3F73;
+
+  --display: "Newsreader", Georgia, serif;
+  --body:    "IBM Plex Sans", system-ui, sans-serif;
+  --mono:    "IBM Plex Mono", "Courier New", monospace;
+
+  --radius: 3px;
+  --wrap: 1120px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+
+a { color: var(--maroon-dk); }
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--maroon);
+  outline-offset: 3px;
+}
+
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 0.4em;
+  letter-spacing: -0.005em;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--maroon);
+  margin: 0 0 0.6em;
+}
+
+/* ---------------------------------------------------
+   Header
+--------------------------------------------------- */
+.site-header { padding: 22px 0 6px; }
+
+.header-inner {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.wordmark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.wordmark__mark {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 0.85rem;
+  border: 1.5px solid var(--gold);
+  color: var(--maroon-dk);
+  width: 30px; height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.wordmark__text {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.header-note {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6B6858;
+}
+
+/* ---------------------------------------------------
+   Binder tab strip — the department switcher.
+   This is the signature element: physical binder-divider
+   tabs, one open (English), the rest ghosted, plus a slot
+   to add more.
+--------------------------------------------------- */
+.binder { margin-top: 18px; }
+
+.binder-inner { padding-bottom: 0; }
+
+.binder-tabs {
+  list-style: none;
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+
+.tab-spacer { flex: 1; }
+
+.tab {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  padding: 10px 18px 9px;
+  clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.tab--ghost {
+  color: var(--ghost);
+  background: transparent;
+  border: 1px dashed #CFC9B4;
+  border-bottom: none;
+  opacity: 0.85;
+}
+
+.tab--ghost:hover { opacity: 1; transform: translateY(-2px); }
+
+.tab--add {
+  color: var(--maroon-dk);
+  background: transparent;
+  border: 1px dashed var(--gold);
+  border-bottom: none;
+}
+
+.tab--add:hover { transform: translateY(-2px); }
+
+.tab--active {
+  color: var(--paper);
+  background: var(--maroon);
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 12px 26px 11px;
+  box-shadow: 0 -4px 14px rgba(122, 38, 50, 0.25);
+}
+
+/* ---------------------------------------------------
+   Hero
+--------------------------------------------------- */
+.hero {
+  background: var(--maroon);
+  color: var(--paper);
+}
+
+.hero-inner { padding: 52px 24px 40px; }
+
+.hero h1 {
+  color: var(--paper);
+  font-size: clamp(2rem, 3.6vw, 2.8rem);
+  line-height: 1.1;
+  max-width: 20ch;
+}
+
+.hero-lede {
+  max-width: 52ch;
+  color: #E8D3D6;
+  font-size: 1.02rem;
+  margin: 0 0 30px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.filter-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #D8B9BD;
+  margin-bottom: 8px;
+}
+
+.chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.chip {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--paper);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 999px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.chip:hover { background: rgba(255,255,255,0.16); }
+
+.chip.is-active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--maroon-dk);
+  font-weight: 500;
+}
+
+/* ---------------------------------------------------
+   Resource shelves
+--------------------------------------------------- */
+.shelf { padding: 52px 0; }
+.shelf--alt { background: var(--paper-lo); }
+
+.shelf h2 { font-size: 1.55rem; margin-bottom: 24px; }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.res-card {
+  background: var(--card);
+  border: 1px solid #DCD5BF;
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.res-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 22px rgba(32, 36, 31, 0.1);
+}
+
+.res-card__meta {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.grade-chip {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--maroon-dk);
+  border: 1px solid var(--maroon-dk);
+  border-radius: 999px;
+  padding: 2px 9px;
+}
+
+.type-tag {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: #6B6858;
+  padding: 2px 2px;
+}
+
+.res-card h3 {
+  font-size: 1.08rem;
+  margin: 0 0 0.4em;
+}
+
+.res-card p {
+  color: #4C4A3E;
+  font-size: 0.9rem;
+  margin: 0;
+  flex: 1;
+}
+
+.card-link {
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-decoration: none;
+  align-self: flex-start;
+}
+
+.card-link:hover { color: var(--maroon); }
+
+.res-card.is-hidden { display: none; }
+
+.empty-state {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: #6B6858;
+  text-align: center;
+  padding: 30px 0 4px;
+}
+
+/* ---------------------------------------------------
+   Footer — department directory
+--------------------------------------------------- */
+.site-footer {
+  background: var(--ink);
+  color: #C7C4B4;
+  padding: 56px 0 30px;
+}
+
+.footer-head { max-width: 54ch; margin-bottom: 32px; }
+.footer-head h2 { color: var(--paper); font-size: 1.7rem; }
+.footer-lede { color: #A6A392; margin: 0; }
+
+.dept-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.dept-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid #3A3A2E;
+  border-radius: var(--radius);
+  padding: 18px 18px 16px;
+  position: relative;
+}
+
+.dept-swatch {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.dept-swatch--eng { background: var(--maroon); }
+.dept-swatch--mth { background: var(--mth); }
+.dept-swatch--sci { background: var(--sci); }
+.dept-swatch--ss  { background: var(--ss); }
+.dept-swatch--art { background: var(--art); }
+
+.dept-card h3 {
+  color: var(--paper);
+  font-size: 1rem;
+  margin: 0 0 0.35em;
+}
+
+.dept-card p {
+  font-size: 0.84rem;
+  color: #A6A392;
+  margin: 0 0 12px;
+}
+
+.dept-status {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #79765F;
+}
+
+.dept-status--live { color: #D9A9AE; }
+
+.dept-card--live { border-color: var(--maroon); }
+
+.dept-card--add {
+  display: block;
+  text-decoration: none;
+  border-style: dashed;
+  transition: border-color 0.15s ease;
+}
+
+.dept-card--add:hover { border-color: var(--gold); }
+
+.dept-add-icon {
+  display: grid;
+  place-items: center;
+  width: 26px; height: 26px;
+  border: 1px dashed var(--gold);
+  border-radius: 50%;
+  color: var(--gold);
+  font-family: var(--mono);
+  margin-bottom: 10px;
+}
+
+.footer-fine {
+  font-size: 0.78rem;
+  color: #6E6C5B;
+  border-top: 1px solid #33332A;
+  padding-top: 20px;
+}
+
+/* ---------------------------------------------------
+   Responsive
+--------------------------------------------------- */
+@media (max-width: 860px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .dept-grid { grid-template-columns: repeat(2, 1fr); }
+  .binder-tabs { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 2px; }
+  .tab-spacer { flex: 0 0 12px; }
+}
+
+@media (max-width: 560px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .dept-grid { grid-template-columns: 1fr; }
+  .filters { gap: 20px; }
+}

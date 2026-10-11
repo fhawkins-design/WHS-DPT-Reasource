@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Resource Hub — English Department</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="stylesheet.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="#top">
+      <span class="wordmark__mark">RH</span>
+      <span class="wordmark__text">Resource&nbsp;Hub</span>
+    </a>
+    <p class="header-note">Shared resources, organised by department</p>
+  </div>
+</header>
+
+<!-- Binder tab strip — the department switcher. English is open;
+     everything else is a ghost tab waiting to be filled in. -->
+<nav aria-label="Departments" class="binder">
+  <div class="wrap binder-inner">
+    <ul class="binder-tabs">
+      <li><a class="tab tab--ghost" href="#directory" data-dept="mth">Math</a></li>
+      <li><a class="tab tab--ghost" href="#directory" data-dept="sci">Science</a></li>
+      <li><a class="tab tab--ghost" href="#directory" data-dept="ss">Social&nbsp;Studies</a></li>
+      <li><a class="tab tab--ghost" href="#directory" data-dept="art">Arts</a></li>
+      <li><a class="tab tab--add" href="#directory">+ Add department</a></li>
+      <li class="tab-spacer" aria-hidden="true"></li>
+      <li><a class="tab tab--active" href="#top">English</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <p class="eyebrow">English Department · Live</p>
+      <h1>Everything for the English classroom, in one shelf.</h1>
+      <p class="hero-lede">
+        Reading lists, grammar references, essay guides, and analysis
+        tools — built by the department, filterable by year and type.
+      </p>
+
+      <div class="filters">
+        <div class="filter-group">
+          <span class="filter-label">year</span>
+          <div class="chip-row" data-filter="year">
+            <button class="chip is-active" data-value="all" type="button">All</button>
+            <button class="chip" data-value="9" type="button">9</button>
+            <button class="chip" data-value="10" type="button">10</button>
+            <button class="chip" data-value="11" type="button">11</button>
+            <button class="chip" data-value="12" type="button">12</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Type</span>
+          <div class="chip-row" data-filter="type">
+            <button class="chip is-active" data-value="all" type="button">All</button>
+            <button class="chip" data-value="Guide" type="button">Guide</button>
+            <button class="chip" data-value="Worksheet" type="button">Worksheet</button>
+            <button class="chip" data-value="Reference" type="button">Reference</button>
+            <button class="chip" data-value="List" type="button">List</button>
+            <button class="chip" data-value="Template" type="button">Template</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="shelf" aria-labelledby="reading-lists">
+    <div class="wrap">
+      <h2 id="reading-lists">Reading lists</h2>
+      <div class="card-grid">
+
+        <article class="res-card" data-year="9" data-type="List">
+          <div class="res-card__meta">
+            <span class="year-chip">GR 9</span>
+            <span class="type-tag">List</span>
+          </div>
+          <h3>year 9 core novels</h3>
+          <p>The required texts for the year, with alternate picks for independent reading.</p>
+          <a class="card-link" href="#">Open resource →</a>
+        </article>
+
+        <article class="res-card" data-year="11" data-type="List">
+          <div class="res-card__meta">
+            <span class="year-chip">GR 11–12</span>
+            <span class="type-tag">List</span>
+          </div>
+          <h3>AP Literature long list</h3>
+          <p>Sixty titles spanning the exam's historical range, tagged by period and form.</p>
+          <a class="card-link" href="#">Open resource →</a>
+        </article>
+
+        <article class="res-card" data-year="9" data-type="List">
+          <div class="res-card__meta">
+            <span class="year-chip">GR 9–12</span>
+            <span class="type-tag">List</span>
+          </div>
+          <h3>Book club picks</h3>
+          <p>A rotating shortlist for lunchtime book club, refreshed each term.</p>
+          <a class="card-link" href="#">Open resource →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="shelf shelf--alt" aria-labelledby="grammar">
+    <div class="wrap">
+      <h2 id="grammar">Grammar &amp; style</h2>
+      <div class="card-grid">
+
+        <article class="res-card" data-year="9" data-type="Guide">
+          <div class="res-card__meta">
+            <span class="year-chip">GR 9–10</span>
+            <span class="type-tag">Guide</span>
+          </div>
+          <h3>Comma splices, explained</h3>
+          <p>Four patterns that cause the most run-ons, with fixes for each.</p>
+          <a class="card-link" href="#">Open resource →</a>
+        </article>
+
+        <article class="res-card" data-year="9" data-type="Reference">
+          <div class="res-card__meta">
+            <span class="year-chip">GR 9–12</span>
+            <span class="type-tag">Reference</span>
+          </div>
+          <h3>MLA citation quick sheet</h3>
+          <p>One page covering in-text citations and the works-cited format.</p>
+          <a class="card-link" href="#">Open resource →</a>
+        </article>
+
+        <article class="res-card" data-year="9" data-type="Worksheet">
+          <div class="res-card__meta">
+            <span class="year-chip">GR 9–10</span>
+            <span class="type-tag">Worksheet</span>
+          </div>
+          <h3>Active vs. passive voice</h3>
+          <p>Twelve sentences to rewrite, plus an answer key for self-checking.</p>
+          <a class="card-link" href="#">Open resource →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="shelf" aria-labelledby="essays">
+    <div class="wrap">
+      <h2 id="essays">Essay &amp; writing guides</h2>
+      <div class="card-grid">
+
+        <article class="res-card" data-year="9" data-type="Guide">
+          <div class="res-card__meta">
+            <span class="year-chip">GR 9–12</span>
+            <span class="type-tag">Guide</span>
+          </div>
+          <h3>Building a thesis statement</h3>
+          <p>A three-step method for turning a topic into an arguable claim.</p>
+          <a class="card-link" href="#">Open resource →</a>
+        </article>
+
+        <article class="res-card" data-year="11" data-type="Guide">
+          <div class="res-card__meta">
+            <span class="year-chip">GR 11–12</span>
+            <span class="type-tag">Guide</span>
+          </div>
+          <h3>Timed essay strategies</h3>
+          <p>How to plan, pace, and revise an essay written under exam conditions.</p>
+          <a class="card-link" href="#">Open resource →</a>
+        </article>
+
+        <article class="res-card" data-year="9" data-type="Worksheet">
+          <div class="res-card__meta">
+            <span class="year-chip">GR 9–12</span>
+            <span class="type-tag">Worksheet</span>
+          </div>
+          <h3>Peer review checklist</h3>
+          <p>Structured prompts for giving feedback that's specific and usable.</p>
+          <a class="card-link" href="#">Open resource →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="shelf shelf--alt" aria-labelledby="analysis">
+    <div class="wrap">
+      <h2 id="analysis">Literary analysis tools</h2>
+      <div class="card-grid">
+
+        <article class="res-card" data-year="9" data-type="Guide">
+          <div class="res-card__meta">
+            <span class="year-chip">GR 9–10</span>
+            <span class="type-tag">Guide</span>
+          </div>
+          <h3>Annotating poetry</h3>
+          <p>A margin-notes system for tracking sound, structure, and imagery.</p>
+          <a class="card-link" href="#">Open resource →</a>
+        </article>
+
+        <article class="res-card" data-year="10" data-type="Worksheet">
+          <div class="res-card__meta">
+            <span class="year-chip">GR 10–12</span>
+            <span class="type-tag">Worksheet</span>
+          </div>
+          <h3>Close reading prompts</h3>
+          <p>Question sets for unseen prose extracts, organised by difficulty.</p>
+          <a class="card-link" href="#">Open resource →</a>
+        </article>
+
+        <article class="res-card" data-year="9" data-type="Template">
+          <div class="res-card__meta">
+            <span class="year-chip">GR 9–12</span>
+            <span class="type-tag">Template</span>
+          </div>
+          <h3>Symbolism tracker</h3>
+          <p>A running log for recording motifs and page references while reading.</p>
+          <a class="card-link" href="#">Open resource →</a>
+        </article>
+
+      </div>
+      <p class="empty-state" hidden>No resources match those filters yet — try clearing one.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer id="directory" class="site-footer">
+  <div class="wrap">
+    <div class="footer-head">
+      <p class="eyebrow">Department directory</p>
+      <h2>One hub, every department</h2>
+      <p class="footer-lede">English is live. The rest are placeholders, ready for whoever
+         wants to build them out next.</p>
+    </div>
+
+    <div class="dept-grid">
+      <div class="dept-card dept-card--live">
+        <span class="dept-swatch dept-swatch--eng" aria-hidden="true"></span>
+        <h3>English</h3>
+        <p>Reading lists, writing guides, analysis tools.</p>
+        <span class="dept-status dept-status--live">Live</span>
+      </div>
+
+      <div class="dept-card">
+        <span class="dept-swatch dept-swatch--mth" aria-hidden="true"></span>
+        <h3>Mathematics</h3>
+        <p>Coming soon — problem sets, formula sheets, exam prep.</p>
+        <span class="dept-status">Not started</span>
+      </div>
+
+      <div class="dept-card">
+        <span class="dept-swatch dept-swatch--sci" aria-hidden="true"></span>
+        <h3>Science</h3>
+        <p>Coming soon — lab guides, diagrams, revision notes.</p>
+        <span class="dept-status">Not started</span>
+      </div>
+
+      <div class="dept-card">
+        <span class="dept-swatch dept-swatch--ss" aria-hidden="true"></span>
+        <h3>Social Studies</h3>
+        <p>Coming soon — source packs, essay scaffolds, timelines.</p>
+        <span class="dept-status">Not started</span>
+      </div>
+
+      <div class="dept-card">
+        <span class="dept-swatch dept-swatch--art" aria-hidden="true"></span>
+        <h3>Arts</h3>
+        <p>Coming soon — technique guides, critique frameworks.</p>
+        <span class="dept-status">Not started</span>
+      </div>
+
+      <a class="dept-card dept-card--add" href="mailto:resourcehub@school.example">
+        <span class="dept-add-icon" aria-hidden="true">+</span>
+        <h3>Start a department</h3>
+        <p>Email the hub coordinator to get a shelf set up.</p>
+      </a>
+    </div>
+
+    <p class="footer-fine">Resource Hub — a shared space maintained by teaching staff. Fictional demo content.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
