@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>English Department Book Catalogue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="stylesheet.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="home.html">
+      <span class="wordmark__mark">EC</span>
+      <span class="wordmark__text">Book&nbsp;Catalogue</span>
+    </a>
+    <p class="header-note">English department · Teacher reference</p>
+  </div>
+</header>
+
+<main id="top" class="library-page">
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <p class="eyebrow">English Department · Book collection</p>
+      <h1>English Department Book Catalogue</h1>
+      <p class="hero-lede">Find books in the department collection. Search by title, author, location, or inventory notes.</p>
+      <div class="library-jump-links">
+        <a href="#bookroom">Bookroom catalogue <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="shelf shelf--alt" id="bookroom" aria-labelledby="bookroom-heading">
+    <div class="wrap">
+      <div class="library-section-head">
+        <div>
+          <p class="eyebrow">Department collection</p>
+          <h2 id="bookroom-heading">Browse the bookroom</h2>
+        </div>
+        <a class="source-link" href="https://docs.google.com/spreadsheets/d/1S8SlAiNh8YqWn6QzGEwbewIQ57Du2PAnMfLg2HcE3wM/edit?gid=0#gid=0" target="_blank" rel="noopener">Open original spreadsheet ↗</a>
+      </div>
+      <p class="section-intro">Browse the English department book collection. This shared catalogue is intended as a resource across all year levels; use the search to find titles and expand any record for its inventory details.</p>
+      <div class="catalogue-toolbar">
+        <label class="catalogue-search">
+          <span class="filter-label">Search the catalogue</span>
+          <input id="book-search" type="search" placeholder="Search title, author, location or notes…" autocomplete="off">
+        </label>
+        <p class="catalogue-count" id="catalogue-count" aria-live="polite"></p>
+      </div>
+      <p class="small-note">The catalogue is not divided into year groups. Suitability can depend on the class, programme and teaching context. “Not recorded” indicates a blank field in the source sheet.</p>
+      <div class="catalogue-list-head">
+        <p class="small-note">Select any title to expand its record and view the full inventory details.</p>
+        <button class="catalogue-toggle" id="toggle-books" type="button" aria-expanded="false">Expand all records <span aria-hidden="true">＋</span></button>
+      </div>
+      <div class="book-list" id="book-list" aria-live="polite"></div>
+      <p class="empty-state" id="book-empty" hidden>No books match that search. Try another title or author.</p>
+      <p class="audit-note" id="sync-status" role="status">Checking for Google Sheets updates…</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-head">
+      <p class="eyebrow">English Department</p>
+      <h2>English department catalogue</h2>
+      <p class="footer-lede">A practical reference for teaching staff.</p>
+      
+    </div>
+    <p class="footer-fine">Catalogue data belongs to the English department. Verify stock with the bookroom before borrowing.</p>
+  </div>
+</footer>
+
+<script src="library-data.js"></script>
+<script src="catalogue-config.js"></script>
+<script src="library.js"></script>
+</body>
+</html>
